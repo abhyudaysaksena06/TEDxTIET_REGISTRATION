@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./HeroSection.css";
 import bgd2 from "../assets/HeroSection/bgd5.webp";
 import img1 from "../assets/HeroSection/1.webp";
@@ -22,17 +22,9 @@ const letters = [
   { char: "T", img: img4 },
 ];
 
-const allImages = [bgd2, ...letters.map((l) => l.img)];
-
+// Preloading lives in src/preloadMedia.js, which starts these fetches at app
+// boot rather than when this component mounts.
 const HeroSection = () => {
-  // ✅ Preload images once when component mounts
-  useEffect(() => {
-    allImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
-
   return (
     <section className="homefnt" style={{ backgroundImage: `url(${bgd2}) ` }}>
       <div className="home">
