@@ -1,0 +1,50 @@
+.home {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-top: 0;
+  /* Optically centres the wordmark in the 50lvw band. The font carries a large
+     descent but "TEDxTIET" has no descenders, so centring the line box would
+     ride high — this offsets for that. */
+  margin-top: 6.6vw;
+  position: relative;
+  z-index: 2; /* keep text above glow */
+}
+
+.homefnt {
+  width: 100%;
+  height: 50lvw;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-position: top left;
+  position: relative; /* so absolute glow works */
+  /* background-color: rgb(170, 0, 0); */
+}
+
+.textmask {
+  color: rgb(255, 229, 213);
+  font-size: 44vw;
+  font-weight: bolder;
+  font-family: "Myfont";
+  line-height: 1; /* kill the ~141px of half-leading above the glyphs */
+}
+
+.textmask:hover {
+  color: transparent;
+  background-image: var(--bg-img);
+  background-size: 50vw;
+  background-repeat: no-repeat;
+  background-position: top left;
+  /* The glyph ink starts ~0.046em below the inline box top (font ascent 422 vs
+     cap ascent 396). 0.046 x 44vw = 2vw — anything larger leaves the top of
+     each letter with no image behind it, so it renders transparent. */
+  background-position-y: 2vw;
+  background-clip: text;
+}
+
+@font-face {
+  font-family: "Myfont";
+  src: url("../assets/MangoGrotesque-ExtraBold.otf");
+}

@@ -1,0 +1,30 @@
+.animated-text {
+  display: inline-block;
+  max-height: 4rem;
+  font-weight: bold;
+  font-size: 5.4rem;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Myfont2';
+  /* You can name it whatever you prefer */
+  color: silver;
+  /* Start color (blue) */
+  transition:
+    color 0.1s ease-in-out,
+}
+
+.animated-text:hover {
+  color: red;
+}
+
+/* Navbar should not block the back button */
+.custom-navbar {
+  z-index: 1000 !important;
+  /* lower than back button */
+}
+
+@font-face {
+  font-family: "Myfont2";
+  src: url("../assets/Thunder-ExtraBoldLC.otf");
+}

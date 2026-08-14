@@ -1,0 +1,68 @@
+/* Page container */
+.sponsors-page {
+  background-color: black;
+  min-height: 100vh;
+  position: relative;
+  height: 1000px;
+  text-align: center;
+}
+
+/* Header section */
+.sponsors-header {
+  padding-top: 4rem;  /* same as pt-16 */
+  padding-bottom: 2rem; /* same as pb-8 */
+}
+
+.sponsors-header h2 {
+  color: white;
+  font-size: 3.75rem; /* Tailwind text-6xl ≈ 60px */
+  font-weight: bold;
+  letter-spacing: 0.1em; /* tracking-wider */
+  margin: 0;
+}
+
+.sponsors-header h3 {
+  margin-top: 1rem; /* mt-4 */
+  color: #ddd;
+  font-size: 1.2rem;
+}
+
+/* Root app container */
+#root {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+/* General reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Animation helpers */
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.translate-y-101 {
+  transform: translateY(101%);
+}
+
+.translate-y-neg-101 {
+  transform: translateY(-101%);
+}
+
+/* Misc */
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

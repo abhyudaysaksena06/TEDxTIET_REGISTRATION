@@ -1,0 +1,77 @@
+.stat-card {
+  position: relative;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(30px);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+  max-width: 280px;
+  overflow: visible;
+  z-index: 1;
+}
+
+.stat-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stat-card.hovered {
+  transform: scale(1.05) translateY(-5px);
+  z-index: 10;
+}
+
+.progress-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.stat-icon-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  filter: drop-shadow(0 0 8px rgba(230, 43, 30, 0.5));
+}
+
+.stat-number {
+  font-weight: 900;
+  color: #E62B1E;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 0 15px rgba(230, 43, 30, 0.5);
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.stat-description {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3;
+  margin: 0;
+  text-align: center;
+  max-width: 180px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

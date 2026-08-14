@@ -1,0 +1,131 @@
+/* Container */
+.flowing-menu {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.flowing-menu-nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu item */
+.menu-item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 -1px 0 0 #fff;
+}
+
+/* Link text */
+.menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  font-size: 4vh;
+  transition: color 0.3s ease-out;
+}
+
+.menu-link:hover {
+  color: #060010;
+}
+
+.menu-link:focus {
+  color: white;
+}
+
+.menu-link:focus-visible {
+  color: #060010;
+}
+
+/* Text inside marquee */
+.menu-text {
+  color: #060010;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 4vh;
+  line-height: 1.2;
+  padding: 1vh 1vw 0;
+}
+
+/* Image inside marquee */
+.menu-image {
+  width: 240px;
+  height: 15vh;
+  margin: 2em 2vw;
+  padding: 1em 0;
+  border-radius: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nasher-logo {
+  width: 500px !important;
+  height: 75px !important; 
+  border-radius: 25px !important;
+  background-size: cover !important; /* ensures the background fills the rounded corners */
+}
+
+.reduced-logo {
+  background-size: 90% !important;
+  width: 250px !important;
+}
+
+.twisted-logo,
+.tooyumm-logo {
+  width: 250px !important;
+  background-size: 90% !important; /* Zoom in */
+  background-position: center 65% !important; /* Shift up to cut from top */
+}
+
+/* Marquee animation container */
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background: white;
+  transform: translateY(100%);
+}
+
+.marquee-inner {
+  height: 100%;
+  width: 400%;
+  display: flex;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 400%;
+  will-change: transform;
+  animation: marquee 30s linear infinite;
+}
+
+/* Keyframes */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
