@@ -122,10 +122,6 @@ export const EcGrid = ({
 
   // --- New combined event handlers for spotlight on cards ---
   const handleGridMouseMove = (e) => {
-    const r = rootRef.current.getBoundingClientRect();
-    const x = e.clientX - r.left;
-    const y = e.clientY - r.top;
-
     // Find the hovered card
     const targetCard = e.target.closest(".chromaa-card");
     if (!targetCard || !rootRef.current.contains(targetCard)) return;

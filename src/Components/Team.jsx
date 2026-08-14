@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TeamMatrix from './TeamMatrix';
 
-const TEAM_MEMBERS = [
+export const TEAM_MEMBERS = [
   { name: 'VRINDA CHHABRA', role: 'CURATION HEAD', image: '/ExecutiveBoard/VRINDACHHABRA.webp' },
   { name: 'DAKSH SACHDEVA', role: 'DESIGN HEAD', image: '/ExecutiveBoard/DAKSHSACHDEVA.webp' },
   { name: 'AANYA GARG', role: 'MARKETING HEAD', image: '/ExecutiveBoard/AANYAGARG.webp' },

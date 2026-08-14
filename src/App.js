@@ -15,7 +15,6 @@ import StatsOverview from "./Components/StatsOverview.jsx";
 import Reveal from "./Components/Reveal"; // preloader
 import ContactForm from "./Components/ContactForm.jsx";
 import InfiniteGallery from "./Components/infiniteGallery.jsx";
-import EbGrid from "./Components/EbGrid.jsx";
 import Event from "./Components/Event.jsx"; // ✅ Event page
 import Register from "./Components/Register.jsx"; // ✅ Register page
 // import PopupOverlay from "./Components/PopupOverlay";

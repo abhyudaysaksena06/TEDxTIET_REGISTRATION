@@ -5,26 +5,12 @@ import {
   Offcanvas,
 } from "react-bootstrap";
 import "./style2.css";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../assets/tedxlogo.png"; // ✅ update path to your logo file
+import { Link } from "react-router-dom";
 
 function CustomNavbar() {
   const [show, setShow] = useState(false);
-  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
-
-  const handleAboutClick = (e) => {
-    e.preventDefault();
-    setShow(false); // close offcanvas
-    navigate("/#testimonials"); // redirect with hash
-    setTimeout(() => {
-      const el = document.getElementById("testimonials");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }, 100);
-  };
 
   return (
     <ReactNavbar
@@ -35,9 +21,6 @@ function CustomNavbar() {
       className="bg-transparent border-0 shadow-none"
     >
       <Container fluid className="p-0 m-0 d-flex align-items-center justify-content-between">
-
-        {/* ✅ Logo on the left */}
-        {/* <Link to="/home" onClick={handleClose} className="d-flex align-items-center ms-2"> <img src={logo} alt="TEDxTIET Logo" style={{ height: "45px", width: "auto" }} /></Link> */}
 
         {/* ✅ Hamburger on the right */}
         <ReactNavbar.Toggle

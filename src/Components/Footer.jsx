@@ -16,9 +16,9 @@ function Footer() {
       <hr style={{ border: "1px solid white" }} />
       <img
         src="/ted_logo.png"
+        alt="TEDxTIET"
         style={{
           width: "25%",
-          alt: "",
           height: "auto",
 
           margin: "auto",
@@ -76,6 +76,7 @@ function Footer() {
           href="https://www.facebook.com/tedxtiet/"
           target="_blank"
           rel="noreferrer"
+          aria-label="TEDxTIET on Facebook"
           className="fa-brands fa-facebook"
           style={{
             color: "white",
@@ -91,6 +92,7 @@ function Footer() {
           href="https://www.instagram.com/tedxtiet/#"
           target="_blank"
           rel="noreferrer"
+          aria-label="TEDxTIET on Instagram"
           className="fa-brands fa-instagram"
           style={{
             color: "white",
@@ -105,6 +107,7 @@ function Footer() {
           href="https://www.linkedin.com/company/tedxtiet/"
           target="_blank"
           rel="noreferrer"
+          aria-label="TEDxTIET on LinkedIn"
           className="fa-brands fa-linkedin-in"
           style={{
             color: "white",
@@ -120,6 +123,7 @@ function Footer() {
           href="https://www.youtube.com/playlist?list=PLwvmGZzdo6jA8Fk6aVwQ5zAksnJfCf1o4"
           target="_blank"
           rel="noreferrer"
+          aria-label="TEDxTIET on YouTube"
           className="fa-brands fa-youtube"
           style={{
             color: "white",

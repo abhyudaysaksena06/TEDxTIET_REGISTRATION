@@ -1,29 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 const AnimatedCounter = ({ targetNumber, duration = 2000 }) => {
   const [count, setCount] = useState(0);
   const [hasAnimated, setHasAnimated] = useState(false);
   const elementRef = useRef(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          animateCounter();
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasAnimated]);
-
-  const animateCounter = () => {
+  const animateCounter = useCallback(() => {
     const startTime = Date.now();
     const endTime = startTime + duration;
 
@@ -42,7 +24,25 @@ const AnimatedCounter = ({ targetNumber, duration = 2000 }) => {
     };
 
     requestAnimationFrame(updateCounter);
-  };
+  }, [targetNumber, duration]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          animateCounter();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated, animateCounter]);
 
   return (
     <span ref={elementRef} style={{ display: 'inline-block' }}>

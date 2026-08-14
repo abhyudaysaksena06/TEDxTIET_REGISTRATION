@@ -1,3 +1,5 @@
 .cache/
 .env
 node_modules/
+build/
+.DS_Store
