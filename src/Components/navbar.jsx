@@ -55,11 +55,6 @@ function CustomNavbar() {
                 </Link>
               </li>
               <li>
-                <Link className="animated-text" to="/sponsor" onClick={handleClose}>
-                  Sponsor
-                </Link>
-              </li>
-              <li>
                 <Link className="animated-text" to="/team" onClick={handleClose}>
                   Team
                 </Link>

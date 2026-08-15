@@ -9,7 +9,6 @@ import ProfileCard from "./Components/ProfileCard.jsx";
 import Footer from "./Components/Footer.jsx";
 import NotFound from "./Components/NotFound";
 // import Team from "./Components/Team.jsx";
-import Sponsors from "./Components/Sponsors.jsx";
 import Speaker from "./Components/Speaker.jsx";
 import StatsOverview from "./Components/StatsOverview.jsx";
 import Reveal from "./Components/Reveal"; // preloader
@@ -94,7 +93,6 @@ function App() {
         <Route path="/profile" element={<ProfileCard />} />
         <Route path="/footer" element={<Footer />} />
         <Route path="/gallery" element={<InfiniteGallery />} />
-        <Route path="/sponsor" element={<Sponsors />} />
         <Route path="/speakers" element={<Speaker />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/team" element={<Team/>} />

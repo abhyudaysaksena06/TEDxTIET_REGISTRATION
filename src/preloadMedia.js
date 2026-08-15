@@ -10,7 +10,7 @@
  *
  *   1. Hero        - above the fold on "/", parallel, high priority
  *   2. Home rest   - speaker cards + footer logo, below the fold
- *   3. Other routes- gallery / team / sponsors, low priority, bounded pool
+ *   3. Other routes- gallery / team, low priority, bounded pool
  */
 
 import bgd5 from "./assets/HeroSection/bgd5.webp";
@@ -85,15 +85,6 @@ const EXECUTIVE_COMMITTEE = [
   "WARIS.webp",
 ].map((f) => `/ExecutiveCommittee/${f}`);
 
-const SPONSORS = [
-  "/Sponsors/Amogh.jpeg",
-  "/Sponsors/Astora.jpg",
-  "/Sponsors/IMG_2159.JPG",
-  "/Sponsors/IMG_2160.JPG",
-  "/Sponsors/TooYumm.jpg",
-  "/Sponsors/TwistedTails.jpg",
-];
-
 // EcGrid / EbGrid / alumni card art. Pulled by directory so adding a file to
 // src/assets/gridimages does not need a matching edit here.
 const gridContext = require.context(
@@ -112,7 +103,6 @@ const GALLERY = Array.from(
 // Tier 3 — everything else, cheapest-and-likeliest first.
 const OTHER_ROUTES = [
   ...EXECUTIVE_BOARD,
-  ...SPONSORS,
   ...GRID_IMAGES,
   ...EXECUTIVE_COMMITTEE,
   ...GALLERY,
