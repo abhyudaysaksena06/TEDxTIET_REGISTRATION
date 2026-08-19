@@ -87,12 +87,13 @@ const EXECUTIVE_COMMITTEE = [
 
 // EcGrid / EbGrid / alumni card art. Pulled by directory so adding a file to
 // src/assets/gridimages does not need a matching edit here.
-const gridContext = require.context(
-  "./assets/gridimages",
-  false,
-  /\.(webp|png|jpe?g)$/
+const GRID_IMAGES = Object.values(
+  import.meta.glob("./assets/gridimages/*.{webp,png,jpg,jpeg}", {
+    eager: true,
+    query: "?url",
+    import: "default",
+  })
 );
-const GRID_IMAGES = gridContext.keys().map(gridContext);
 
 // /gallery is the heaviest single route (~6.9 MB), so it goes last.
 const GALLERY = Array.from(

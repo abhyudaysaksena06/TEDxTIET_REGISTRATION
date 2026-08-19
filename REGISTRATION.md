@@ -42,11 +42,10 @@ All CSS is scoped under `.rn-` / `.ad-` prefixes. The standalone app set global
 cp .env.example .env
 ```
 
-Fill in your project URL and anon key from **Project Settings → API**. CRA only
-exposes vars prefixed with `REACT_APP_`, so the standalone app's `VITE_` names
-won't work here. `.env` is gitignored — don't commit real keys.
+Fill in your project URL and anon key from **Project Settings → API**. Vite only
+exposes vars prefixed with `VITE_`. `.env` is gitignored — don't commit real keys.
 
-Restart the dev server after editing `.env`; CRA only reads it at startup.
+Restart the dev server after editing `.env`; Vite only reads it at startup.
 
 ### 2. Database
 

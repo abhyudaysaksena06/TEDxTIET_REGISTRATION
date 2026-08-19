@@ -28,8 +28,8 @@ export default function AdminDashboard() {
         <div className="ad-card ad-login-card">
           <h1>Configuration error</h1>
           <p className="ad-muted">
-            Supabase env vars are missing. Set REACT_APP_SUPABASE_URL and
-            REACT_APP_SUPABASE_ANON_KEY in your .env file, then restart the dev server.
+            Supabase env vars are missing. Set VITE_SUPABASE_URL and
+            VITE_SUPABASE_ANON_KEY in your .env file, then restart the dev server.
           </p>
         </div>
       </div>
