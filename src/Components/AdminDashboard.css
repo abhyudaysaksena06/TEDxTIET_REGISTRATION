@@ -1,0 +1,311 @@
+/* Scoped under .ad-* so none of this leaks into the rest of the site. */
+
+.ad-page {
+  --ad-red: #eb0028;
+  --ad-black: #000000;
+  --ad-dark-gray: #0d0d0d;
+  --ad-gray: #b5b5b5;
+  --ad-border: rgba(255, 255, 255, 0.1);
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  background: var(--ad-black);
+  color: #fff;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.ad-page--wide {
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.ad-page *,
+.ad-page *::before,
+.ad-page *::after {
+  box-sizing: border-box;
+}
+
+.ad-card {
+  width: 100%;
+  background: var(--ad-dark-gray);
+  border: 1px solid var(--ad-border);
+  border-radius: 16px;
+  padding: 28px 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.ad-login-card {
+  max-width: 420px;
+}
+
+.ad-dash-card {
+  max-width: 1100px;
+}
+
+.ad-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.ad-header h1 {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: #fff;
+}
+
+.ad-header h1 span,
+.ad-title span {
+  color: var(--ad-red);
+}
+
+.ad-divider {
+  width: 64px;
+  height: 2px;
+  background: var(--ad-red);
+  margin: 14px auto 0;
+}
+
+.ad-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ad-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ad-gray);
+  margin-bottom: 8px;
+}
+
+.ad-field input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--ad-border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ad-field input:focus,
+.ad-search:focus {
+  border-color: var(--ad-red);
+  box-shadow: 0 0 0 1px var(--ad-red);
+}
+
+.ad-btn {
+  background: var(--ad-red);
+  color: #fff;
+  border: 1px solid var(--ad-red);
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.ad-btn:hover:not(:disabled) {
+  background: #c40021;
+}
+
+.ad-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ad-btn--ghost {
+  background: transparent;
+  border-color: var(--ad-border);
+  color: var(--ad-gray);
+}
+
+.ad-btn--ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.ad-error {
+  color: var(--ad-red);
+  font-size: 0.82rem;
+  margin: 4px 0;
+}
+
+.ad-muted {
+  color: var(--ad-gray);
+  font-size: 0.85rem;
+}
+
+.ad-note {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.78rem;
+}
+
+.ad-muted code {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.ad-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ad-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: #fff;
+}
+
+.ad-signed-in {
+  margin: 6px 0 0;
+  font-size: 0.8rem;
+}
+
+.ad-stats {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0 18px;
+}
+
+.ad-stat {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--ad-border);
+  border-radius: 10px;
+  padding: 12px 20px;
+  min-width: 96px;
+}
+
+.ad-stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ad-red);
+  line-height: 1.1;
+}
+
+.ad-stat-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ad-gray);
+  margin-top: 4px;
+}
+
+.ad-toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.ad-search {
+  flex: 1 1 240px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--ad-border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: #fff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ad-empty {
+  padding: 36px 0;
+  text-align: center;
+}
+
+.ad-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--ad-border);
+  border-radius: 10px;
+}
+
+.ad-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 720px;
+}
+
+.ad-table th {
+  text-align: left;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ad-gray);
+  font-weight: 600;
+  padding: 12px 14px;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--ad-border);
+  white-space: nowrap;
+}
+
+.ad-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.ad-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ad-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.ad-dim {
+  color: var(--ad-gray);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .ad-card {
+    padding: 22px 18px;
+  }
+}
+
+/* Chrome/Safari autofill forces its own near-white background and ignores
+   `background`, which left white text on a white box the moment a saved
+   value was filled in. `background-color` cannot override it -- the inset
+   box-shadow is the only way to repaint the field, and -webkit-text-fill-color
+   is what actually controls autofilled text (plain `color` is ignored).
+   The long transition delay stops Chrome re-applying its yellow flash. */
+.ad-field input:-webkit-autofill,
+.ad-field input:-webkit-autofill:hover,
+.ad-field input:-webkit-autofill:focus,
+.ad-field input:-webkit-autofill:active,
+.ad-search:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset;
+  box-shadow: 0 0 0 1000px #0a0a0a inset;
+  caret-color: #fff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.ad-field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset, 0 0 0 1px var(--ad-red);
+  box-shadow: 0 0 0 1000px #0a0a0a inset, 0 0 0 1px var(--ad-red);
+}

@@ -16,6 +16,8 @@ import ContactForm from "./Components/ContactForm.jsx";
 import InfiniteGallery from "./Components/infiniteGallery.jsx";
 import Event from "./Components/Event.jsx"; // ✅ Event page
 import Register from "./Components/Register.jsx"; // ✅ Register page
+import RegisterNow from "./Components/RegisterNow.jsx"; // standalone registration page
+import AdminDashboard from "./Components/AdminDashboard.jsx"; // admin-only data view
 // import PopupOverlay from "./Components/PopupOverlay";
 import EventDetails from "./Components/EventDetails";
 import StackedCards from "./Components/StackedCards";
@@ -86,6 +88,14 @@ function App() {
 
         {/* Register page */}
         <Route path="/register" element={<Register />} />
+
+        {/* Standalone registration page. Deliberately NOT linked from the
+            navbar or anywhere else — reachable only by typing the URL. */}
+        <Route path="/register-now" element={<RegisterNow />} />
+
+        {/* Admin dashboard. Access is enforced by Supabase RLS, not by the
+            route being unlisted. Also deliberately unlinked. */}
+        <Route path="/admin" element={<AdminDashboard />} />
 
         {/* Optional direct component routes */}
         <Route path="/home" element={<Navigate to="/" />} />

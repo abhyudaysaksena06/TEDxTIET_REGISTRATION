@@ -1,0 +1,226 @@
+/* Scoped under .rn-* so none of this leaks into the rest of the site.
+   The standalone app set global `body` / `*` styles; those are deliberately
+   dropped here and folded into .rn-page instead. */
+
+.rn-page {
+  --rn-red: #eb0028;
+  --rn-black: #000000;
+  --rn-dark-gray: #0d0d0d;
+  --rn-gray: #b5b5b5;
+  --rn-border: rgba(255, 255, 255, 0.1);
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+  background: var(--rn-black);
+  color: #fff;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.rn-page *,
+.rn-page *::before,
+.rn-page *::after {
+  box-sizing: border-box;
+}
+
+.rn-card {
+  width: 100%;
+  max-width: 640px;
+  background: var(--rn-dark-gray);
+  border: 1px solid var(--rn-border);
+  border-radius: 16px;
+  padding: 28px 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.rn-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rn-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: #fff;
+}
+
+.rn-header h1 span {
+  color: var(--rn-red);
+}
+
+.rn-divider {
+  width: 64px;
+  height: 2px;
+  background: var(--rn-red);
+  margin: 16px auto 0;
+}
+
+.rn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rn-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.rn-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--rn-gray);
+  margin-bottom: 8px;
+}
+
+.rn-field label .rn-req {
+  color: var(--rn-red);
+}
+
+.rn-field input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--rn-border);
+  border-radius: 8px;
+  padding: 13px 16px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.rn-field input::placeholder {
+  color: rgba(181, 181, 181, 0.55);
+}
+
+.rn-field input:focus {
+  border-color: var(--rn-red);
+  box-shadow: 0 0 0 1px var(--rn-red);
+}
+
+.rn-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--rn-gray);
+  cursor: pointer;
+}
+
+.rn-consent input {
+  margin-top: 3px;
+  accent-color: var(--rn-red);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.rn-consent a {
+  color: var(--rn-red);
+  text-decoration: none;
+}
+
+.rn-consent a:hover {
+  text-decoration: underline;
+}
+
+button.rn-submit {
+  width: 100%;
+  background: var(--rn-red);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 0 35px rgba(235, 0, 40, 0.3);
+  transition: background 0.2s, transform 0.1s;
+}
+
+button.rn-submit:hover:not(:disabled) {
+  background: #c40021;
+}
+
+button.rn-submit:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+button.rn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rn-success {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.rn-success h2 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.rn-success p {
+  color: var(--rn-gray);
+  font-size: 0.95rem;
+}
+
+.rn-error-msg {
+  color: var(--rn-red);
+  font-size: 0.78rem;
+  margin-top: 6px;
+  min-height: 1em;
+}
+
+.rn-submit-error {
+  text-align: center;
+  margin-top: -4px;
+}
+
+@media (max-width: 520px) {
+  .rn-card {
+    padding: 24px 20px;
+  }
+  .rn-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Chrome/Safari autofill forces its own near-white background and ignores
+   `background`, which left white text on a white box the moment a saved
+   value was filled in. `background-color` cannot override it -- the inset
+   box-shadow is the only way to repaint the field, and -webkit-text-fill-color
+   is what actually controls autofilled text (plain `color` is ignored).
+   The long transition delay stops Chrome re-applying its yellow flash. */
+.rn-field input:-webkit-autofill,
+.rn-field input:-webkit-autofill:hover,
+.rn-field input:-webkit-autofill:focus,
+.rn-field input:-webkit-autofill:active,
+.rn-search:-webkit-autofill {
+  -webkit-text-fill-color: #fff;
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset;
+  box-shadow: 0 0 0 1000px #0a0a0a inset;
+  caret-color: #fff;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.rn-field input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset, 0 0 0 1px var(--rn-red);
+  box-shadow: 0 0 0 1000px #0a0a0a inset, 0 0 0 1px var(--rn-red);
+}
